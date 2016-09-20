@@ -26,8 +26,11 @@ Because I can!
 
 ## 实现
 - 发现获取头像返回的header里有了，更新时间，那记录一下对比就行。。
+- crontab 要用绝对路径绝对路径绝对路径
 
 ## 参考
 - [qq头像的获取]()
 - [发邮件](http://www.tuicool.com/articles/byINN3)
+- [crontab使用--linux下的定时任务程序](http://blog.csdn.net/xiaobing_blog/article/details/12428629).注意要用**绝对路径**
+
 
