@@ -6,6 +6,11 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.utils import parseaddr, formataddr
 
+
+import os
+
+ddir = os.path.split(os.path.realpath(__file__))[0]
+
 def _format_addr(s):
     name, addr = parseaddr(s)
     return formataddr(( \
@@ -18,7 +23,7 @@ def sendMail(sender,receiver,subject):
     smtpserver = 'smtp.sina.com' 
     username = "qq519043202@sina.com"
     # 写上你的stmp服务
-    password = "xxxxxx"
+    password = "xxxxx"
 
     msg = MIMEMultipart('alternative') 
     msg['Subject'] = Header(subject,'utf-8')
@@ -45,7 +50,7 @@ def sendMail(sender,receiver,subject):
 
 #构造图片
 
-    fp = open('pic.jpg','rb') 
+    fp = open(ddir+'/pic.jpg','rb') 
     msgImage = MIMEImage(fp.read()) 
     fp.close()
 
@@ -63,10 +68,11 @@ def sendMail(sender,receiver,subject):
 
 
 
+
 sender = "qq519043202@sina.com"
 # 修改receiver
-receiver = '519043202@qq.com' 
 subject = 'zwd的头像变了啊～' 
 
 def send():
-  sendMail(sender,receiver,subject)
+  # sendMail(sender,receiver,subject)
+  sendMail(sender,"519043202@qq.com",subject)
